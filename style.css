@@ -1,0 +1,134 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrollbars */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0; /* Light background color */
+}
+.heading {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Shadow for better visibility */
+}
+.login-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Background video with larger size */
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; /* Increase width for a larger video */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 90vh; /* Increase height to cover more of the viewport */
+    object-fit: cover; /* Ensure the video covers its container */
+    z-index: -1; /* Place the video behind other content */
+    filter: brightness(50%); /* Darken the video content for better contrast */
+}
+
+/* Centered login form */
+.login-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: rgba(102, 86, 86, 0.9); /* Semi-transparent background */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card for login form */
+.card-login {
+    width: 100%;
+}
+
+.card-login h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+     color: black;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* Text field styling */
+.textfield {
+    margin-bottom: 20px;
+}
+
+.textfield label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color:black;
+}
+
+.textfield input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.textfield input:focus {
+    border-color: #009688;
+    outline: none;
+}
+
+/* Button styling */
+.btn-login {
+    width: 100%;
+    padding: 15px;
+    background-color: #00796b;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #004d40;
+    transform: translateY(-2px); 
+}
+
+@media (max-width: 600px) {
+    .login-form {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .card-login h1 {
+        font-size: 1.5rem;
+    }
+    
+    .textfield input {
+        font-size: 0.9rem;
+    }
+    
+    .btn-login {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}

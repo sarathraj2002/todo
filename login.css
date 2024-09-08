@@ -1,0 +1,114 @@
+/* General body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f4f9f9, #e0e5e8);
+}
+
+/* Navbar styling */
+.navbar {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+/* ToDo List container */
+#todo-list {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative; /* Needed for absolute positioning of overlay text */
+}
+
+/* Image styling */
+#todo-list img {
+    max-width: 100%; /* Ensure the image scales within its container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 600px; /* Increase height to make the image larger */
+    border-radius: 12px;
+}
+
+/* Overlay text animation */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9); /* Start from invisible and slightly smaller */
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1); /* End at full opacity and size */
+    }
+}
+
+/* Overlay text */
+#todo-list .overlay-text {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for true center alignment */
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker semi-transparent background for better contrast */
+    padding: 20px; /* Increased padding */
+    border-radius: 12px; /* More rounded corners */
+    font-size: 3rem; /* Large font size like <h1> */
+    font-weight: 700; /* Stronger font weight */
+    text-align: center; /* Center text inside overlay */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for added depth */
+    animation: fadeInScale 1s ease-out; /* Apply the animation */
+}
+
+/* Heading styles */
+#todo-list h3 {
+    margin-top: 20px; /* Space between image and heading */
+    font-size: 2rem; /* Adjusted for better consistency */
+    color: #333;
+    font-weight: 600;
+}
+
+/* ToDo items */
+.list-group-item {
+    font-size: 1rem; /* Adjusted for better readability */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* ToDo item hover effect */
+.list-group-item:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.02);
+}
+
+/* ToDo item completed style */
+.list-group-item.completed {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #todo-list img {
+        max-height: 400px; /* Adjust image size for smaller screens */
+    }
+    
+    #todo-list .overlay-text {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+    
+    #todo-list h3 {
+        font-size: 1.5rem; /* Adjust heading size for smaller screens */
+    }
+    
+    .list-group-item {
+        font-size: 0.875rem; /* Adjust font size for smaller screens */
+    }
+}
